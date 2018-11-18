@@ -21,6 +21,28 @@ jQuery(function ($) {
             $('.events').append("<li>after event fired.</li>");
         }
     });
+
+	/* Some improvements for template silly css navbar styles */
+
+	var colLength = $('#menu-top-menu').find('ul.multi-column').length - 1;
+
+	for (i = 0; i <= colLength; i++) {
+
+		var menuTopItem = $('#menu-top-menu').find('ul.multi-column').eq(i).find('ul.multi-column-dropdown');
+		var menuTopItemLength = menuTopItem.length;
+
+		if (menuTopItemLength == 1) {
+			menuTopItem.parent('div').removeClass('col-sm-4').addClass('col-sm-12');
+			menuTopItem.parents('ul.multi-column').css('min-width', '200px');
+		}
+
+		if (menuTopItemLength == 2) {
+			menuTopItem.parent('div').removeClass('col-sm-4').addClass('col-sm-6');
+			menuTopItem.parents('ul.multi-column').css('min-width', '300px');
+		}
+
+	}
+
 });
 
 jQuery(window).load(function() {

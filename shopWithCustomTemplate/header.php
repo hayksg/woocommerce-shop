@@ -5,13 +5,22 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 <head>
 
-<?php wp_head(); ?>
+	<title><?php bloginfo( 'name' ); wp_title(); ?></title>
+    <meta name="description" content="<?php bloginfo( 'description' ); ?>">
+    <meta charset="<?php bloginfo( 'charset' )?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+      <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <?php endif; ?>
+
+	<?php wp_head(); ?>
 
 </head>
-<body>
+<body <?php body_class(); ?>>
 	<!-- header-section-starts -->
 	<div class="header">
 		<div class="header-top-strip">

@@ -7,23 +7,11 @@
 <div class="container">
     <div class="main-content">
         <div class="online-strip">
-            <div class="col-md-4 follow-us">
-                <h3>follow us : <a class="twitter" href="#"></a><a class="facebook" href="#"></a></h3>
-            </div>
-            <div class="col-md-4 shipping-grid">
-                <div class="shipping">
-                    <img src="<?php bloginfo('template_directory') ?>/images/shipping.png" alt="" />
-                </div>
-                <div class="shipping-text">
-                    <h3>Free Shipping</h3>
-                    <p>on orders over $ 199</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-md-4 online-order">
-                <p>Order online</p>
-                <h3>Tel:<?php echo get_option( 'app_phone' ); ?></h3>
-            </div>
+            <?php
+                if ( is_active_sidebar( 'top_widgets' ) ) {
+		            dynamic_sidebar( 'top_widgets' );
+                }
+            ?>
             <div class="clearfix"></div>
         </div>
         <div class="products-grid">

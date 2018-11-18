@@ -8,10 +8,6 @@ function display_button_title() {
     echo '<input type="text" class="regular-text" name="button_slide" id="button_slide" value="' . esc_attr( get_option( 'button_slide' ) ) . '">';
 }
 
-function display_phone() {
-    echo '<input type="text" class="regular-text" name="app_phone" id="app_phone" value="' . esc_attr( get_option( 'app_phone' ) ) . '">';
-}
-
 function app_options() {
 
     add_settings_field(
@@ -33,16 +29,6 @@ function app_options() {
         array( 'label_for' => 'button_slide' )
     );
     register_setting( 'general' , 'button_slide' );
-
-    add_settings_field(
-        'app_phone',
-        'Phone',
-        'display_phone',
-        'discussion',
-        'default',
-        array( 'label_for' => 'app_phone' )
-    );
-    register_setting( 'discussion' , 'app_phone' );
 
 }
 
