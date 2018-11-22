@@ -43,6 +43,14 @@ function shop_remove_meta_version() {
 
 add_filter( 'the_generator', 'shop_remove_meta_version' );
 
+add_filter( 'woocommerce_get_image_size_thumbnail', function( $size ) {
+    return array(
+        'width' => 350,
+        'height' => 0,
+        'crop' => 0,
+    );
+} );
+
 
 
 /*
