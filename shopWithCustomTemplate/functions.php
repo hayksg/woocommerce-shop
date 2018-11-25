@@ -9,6 +9,7 @@ require(get_template_directory() . '/inc/widgets/register-widgets.php');
 require(get_template_directory() . '/inc/widgets/follow-us.php');
 require(get_template_directory() . '/inc/widgets/shipping.php');
 require(get_template_directory() . '/inc/widgets/order-online.php');
+require(get_template_directory() . '/inc/widgets/products-carousel.php');
 require(get_template_directory() . '/inc/admin-enqueue.php');
 require(get_template_directory() . '/inc/woocommerce-redefined-functions.php');
-require(get_template_directory() . '/classes/Top_Nav_Menu_Walker.php');
+require(get_template_directory() . '/walkers/Top_Nav_Menu_Walker.php');

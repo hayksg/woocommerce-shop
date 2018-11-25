@@ -111,15 +111,3 @@ class Follow_Us extends WP_Widget {
 		return $instance;
 	}
 }
-
-?>
-
-<?php
-
-// register Follow_Us widget
-function register_follow_us() {
-    register_widget( 'Follow_Us' );
-}
-add_action( 'widgets_init', 'register_follow_us' );
-
-?>

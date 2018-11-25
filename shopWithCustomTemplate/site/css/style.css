@@ -813,11 +813,18 @@ ul.product-list li a:hover{
 }
 .offer{
 	position:absolute;
+}
+.otop {
+	top: 2%;
+	left: 6%;
+
+}
+.bottom{
 	bottom: 13%;
 	right: 2%;
 }
 .offer p{
-	font-size:30px;
+	font-size:20px;
 	color:#fff;
 	background:rgba(129, 98, 99, 0.73);
 	padding: 15px 8px;
@@ -1198,11 +1205,6 @@ ul.product-list li a:hover{
 .latest-bis {
 	margin: 1.5em 0;
 	position:relative;
-}
-.offer{
-	position:absolute;
-	bottom: 13%;
-	right: 2%;
 }
 ul.tags_links{
 	padding:0;
@@ -3054,4 +3056,9 @@ p.right {
 	p.tab-text {
 		font-size: 13px;
 	}
+}
+
+a.carousel-img-link {
+	display: inline-block;
+	padding: 0 3px;
 }

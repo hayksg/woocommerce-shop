@@ -116,15 +116,3 @@ class Shipping extends WP_Widget {
 		return $instance;
 	}
 }
-
-?>
-
-<?php
-
-// register Shipping widget
-function register_shipping() {
-    register_widget( 'Shipping' );
-}
-add_action( 'widgets_init', 'register_shipping' );
-
-?>

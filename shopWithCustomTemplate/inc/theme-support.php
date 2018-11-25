@@ -51,6 +51,23 @@ add_filter( 'woocommerce_get_image_size_thumbnail', function( $size ) {
     );
 } );
 
+function change_sale_flash() {
+    global $product;
+
+    $oldPrice = $product->get_regular_price();
+    $newPrice = $product->get_price();
+
+    $salePercentage = round(($oldPrice - $newPrice) / $oldPrice * 100);
+
+    $html  = '<div class="offer otop"><p>';
+    $html .= $salePercentage . '%';
+    $html .= '</p><small>Sale</small></div>';
+
+    return $html;
+}
+
+add_filter( 'woocommerce_sale_flash', 'change_sale_flash' );
+
 
 
 /*
