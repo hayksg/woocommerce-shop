@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="logo">
-                    <h1><a href="<?php home_url(); ?>"><span>E</span> -Shop</a></h1>
+                    <h1><a href="<?php bloginfo( 'url' ); ?>"><span>E</span> -Shop</a></h1>
                 </div>
             </div>
             <!--/.navbar-header-->

@@ -18,6 +18,16 @@ function myTempl_widgets_init() {
         'after_widget' => '',
     ) );
 
+    register_sidebar( array(
+        'name' => 'Footer menu',
+        'id' => 'footer_widget',
+        'description' => 'Footer menu block',
+        'before_widget' => '<div class="col-sm-3 span1_of_4">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ) );
+
 }
 
 add_action( 'widgets_init', 'myTempl_widgets_init' );

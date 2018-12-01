@@ -1,11 +1,15 @@
 <div class="news-letter">
     <div class="container">
         <div class="join">
-            <h6>JOIN OUR MAILING LIST</h6>
+            <h6 class="text-uppercase">Store search</h6>
             <div class="sub-left-right">
                 <form>
-                    <input type="text" value="Enter Your Email Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Email Here';}" />
-                    <input type="submit" value="SUBSCRIBE" />
+                    <input type="text"
+                           name="s"
+                           value="Enter Search Query"
+                           onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Enter Search Query';}" />
+                    <input type="submit" class="text-uppercase" value="Search" />
                 </form>
             </div>
             <div class="clearfix"> </div>
@@ -16,7 +20,14 @@
     <div class="container">
         <div class="footer_top">
             <div class="span_of_4">
-                <div class="col-md-3 span1_of_4">
+
+                <?php
+                    if ( is_active_sidebar( 'footer_widget' ) ) {
+                        dynamic_sidebar( 'footer_widget' );
+                    }
+                ?>
+
+                <!--<div class="col-md-3 span1_of_4">
                     <h4>Shop</h4>
                     <ul class="f_nav">
                         <li><a href="#">new arrivals</a></li>
@@ -29,8 +40,8 @@
                         <li><a href="#">sale</a></li>
                         <li><a href="#">style videos</a></li>
                     </ul>
-                </div>
-                <div class="col-md-3 span1_of_4">
+                </div>-->
+                <!--<div class="col-md-3 span1_of_4">
                     <h4>help</h4>
                     <ul class="f_nav">
                         <li><a href="#">frequently asked  questions</a></li>
@@ -67,7 +78,7 @@
                         <li><a href="#">login</a></li>
                         <li><a href="#">brands</a></li>
                     </ul>
-                </div>
+                </div>-->
                 <div class="clearfix"></div>
             </div>
         </div>

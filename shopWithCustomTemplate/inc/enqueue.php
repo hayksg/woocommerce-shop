@@ -27,3 +27,10 @@ function enqueue() {
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue' );
+
+// Instead of woocommerce add-to-cart.js will be loaded our add-to-cart.js
+function load_script () {
+    wp_register_script( 'wc-add-to-cart', get_template_directory_uri() . '/site/js/add-to-cart.js', array( 'jquery' ), WC_VERSION, true );
+    wp_enqueue_script( 'wc-add-to-cart' );
+}
+add_action( 'wp_enqueue_scripts', 'load_script', 9 );

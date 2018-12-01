@@ -68,6 +68,16 @@ function change_sale_flash() {
 
 add_filter( 'woocommerce_sale_flash', 'change_sale_flash' );
 
+function change_footer_menu ( $nav_menu_args, $nav_menu, $args, $instance ) {
+    $nav_menu_args['container'] = ''; // We do not need container
+    $nav_menu_args['menu_class'] = 'f_nav';
+    $nav_menu_args['link_before'] = '<li>';
+    $nav_menu_args['link_after'] = '</li>';
+
+    return $nav_menu_args;
+}
+add_filter( 'widget_nav_menu_args', 'change_footer_menu', 10, 4 );
+
 
 
 /*
