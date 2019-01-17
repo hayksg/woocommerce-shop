@@ -28,4 +28,32 @@ jQuery(function ($) {
         frameFile.open();
     });
 
+    /* Upload image for top offer widget */
+
+    $(document).on('click', '.js-top-offer-image-upload', function(e){
+
+        e.preventDefault;
+        var button = $(this);
+
+        var frameFile = wp.media({
+            title: 'Select or upload image',
+            library: {
+                type: 'image'
+            },
+            button: {
+                text: 'Select image'
+            },
+            multiple: false // User can select only one image per select
+        });
+
+        frameFile.on('select', function(){
+            var attachment = frameFile.state().get('selection').first().toJSON();
+
+            button.siblings('.top-offer-image').val(attachment.url);
+            button.parents('form').find('*[type="submit"]').removeAttr('disabled');;
+        });
+
+        frameFile.open();
+    });
+
 });

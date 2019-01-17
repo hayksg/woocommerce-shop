@@ -9,8 +9,6 @@
 add_theme_support( 'woocommerce' );
 add_theme_support( 'widgets' );
 
-
-
 /*
 ===========
   Filters
@@ -69,6 +67,14 @@ function change_sale_flash() {
 add_filter( 'woocommerce_sale_flash', 'change_sale_flash' );
 
 function change_footer_menu ( $nav_menu_args, $nav_menu, $args, $instance ) {
+
+    if ($args['id'] == 'left_sidebar') {
+      $nav_menu_args['container'] = '';
+      $nav_menu_args['menu_class'] = 'product-list';
+
+      return $nav_menu_args;
+    }
+
     $nav_menu_args['container'] = ''; // We do not need container
     $nav_menu_args['menu_class'] = 'f_nav';
     $nav_menu_args['link_before'] = '<li>';
@@ -78,7 +84,33 @@ function change_footer_menu ( $nav_menu_args, $nav_menu, $args, $instance ) {
 }
 add_filter( 'widget_nav_menu_args', 'change_footer_menu', 10, 4 );
 
+function check_sidebar_params ($params) {
 
+  /*
+  global $wp_registered_widgets;
+  print_r($wp_registered_widgets); // here we can find widgets names (nav_menu-some_id, custom_html-some_id)
+  */
+
+  if ( $params[0]['id'] == 'left_sidebar' && $params[0]['widget_id'] == 'nav_menu-' . $params[1]['number'] ) {
+    $params[0]['before_widget'] = '<div class="product-listy">';
+    $params[0]['after_widget'] = '</div>';
+    $params[0]['before_title'] = '<h2>';
+    $params[0]['after_title'] = '</h2>';
+  } 
+  /*
+  // instead of this elseif I created custom widget 'top-offer'
+
+  elseif ( $params[0]['id'] == 'left_sidebar' && $params[0]['widget_id'] == 'custom_html-' . $params[1]['number'] ) {
+    $params[0]['before_widget'] = '<div class="latest-bis">';
+    $params[0]['after_widget'] = '</div>';
+  }
+  */
+
+  return $params;
+
+}
+
+add_filter( 'dynamic_sidebar_params', 'check_sidebar_params' );
 
 /*
 =============

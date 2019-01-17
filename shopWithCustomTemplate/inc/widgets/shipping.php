@@ -34,7 +34,7 @@ class Shipping extends WP_Widget {
 
 <div class="col-md-4 shipping-grid">
 	<div class="shipping">
-        <img src="<?php echo $image; ?>" alt="shipping-image" />
+        <img class="img-responsive" src="<?php echo $image; ?>" alt="shipping-image" />
 	</div>
 	<div class="shipping-text">
 		<h3><?php echo $title;  ?></h3>

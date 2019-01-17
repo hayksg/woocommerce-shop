@@ -28,6 +28,16 @@ function myTempl_widgets_init() {
         'after_title' => '</h4>',
     ) );
 
+    register_sidebar( array(
+        'name' => 'Left bar',
+        'id' => 'left_sidebar',
+        'description' => 'Left sidebar block',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ) );
+
 }
 
 add_action( 'widgets_init', 'myTempl_widgets_init' );
@@ -38,5 +48,6 @@ function register_custom_widgets() {
     register_widget( 'Order_Online' );
     register_widget( 'Products_Carousel' );
     register_widget( 'Shipping' );
+    register_widget( 'Top_Offer' );
 }
 add_action( 'widgets_init', 'register_custom_widgets' );

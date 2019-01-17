@@ -24,3 +24,13 @@ function woocommerce_get_product_thumbnail( $size = 'woocommerce_thumbnail', $de
 
     return $product ? $product->get_image( $image_size, $attr ) : '';
 }
+
+
+function my_template_loop_product_link_open() {
+    echo '<a class="cbp-vm-image" href="single.html">';
+}
+
+if ( !is_shop() ) {
+    remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open' );
+    add_action( 'woocommerce_before_shop_loop_item', 'my_template_loop_product_link_open', 10 );
+}

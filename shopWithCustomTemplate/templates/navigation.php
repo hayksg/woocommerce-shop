@@ -1,5 +1,13 @@
-<div class="banner-top">
-    <div class="container">
+<?php if ( is_home() ) : ?>
+    <div class="banner-top">
+        <div class="container">
+<?php else : ?>
+    <div class="inner-banner">
+        <div class="container">
+            <div class="banner-top inner-head">
+<?php endif; ?>
+
+
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -27,3 +35,7 @@
         <!--/.navbar-->
     </div>
 </div>
+
+<?php if ( ! is_home() ) : ?>
+</div>
+<?php endif; ?>

@@ -824,16 +824,17 @@ ul.product-list li a:hover{
 	right: 2%;
 }
 .offer p{
-	font-size:20px;
+	font-size:30px;
 	color:#fff;
 	background:rgba(129, 98, 99, 0.73);
-	padding: 15px 8px;
+	padding: 16px 8px;
 	border-radius:50%;
 	-webkit-border-radius:50%;
 	-o-border-radius:50%;
 	-moz-border-radius:50%;
 	-ms-border-radius:50%;
 	font-weight:400;
+	text-align: center;
 }
 .offer small{
 	color: #7C7C7C;
